@@ -19,6 +19,10 @@
 		D782A5D71BE965AF00E51BAC /* AddPhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782A5D61BE965AF00E51BAC /* AddPhotoTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D782A5DB1BE966F700E51BAC /* LoginSignupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782A5DA1BE966F700E51BAC /* LoginSignupPickerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D782A5DD1BE967E500E51BAC /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782A5DC1BE967E500E51BAC /* LoginSignupViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D782A5DF1BE9694200E51BAC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782A5DE1BE9694200E51BAC /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		D782A5E11BE9696B00E51BAC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782A5E01BE9696B00E51BAC /* Post.swift */; settings = {ASSET_TAGS = (); }; };
+		D782A5E31BE969B400E51BAC /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782A5E21BE969B400E51BAC /* Comments.swift */; settings = {ASSET_TAGS = (); }; };
+		D782A5E51BE969BD00E51BAC /* Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782A5E41BE969BD00E51BAC /* Likes.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		D782A5D61BE965AF00E51BAC /* AddPhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewController.swift; sourceTree = "<group>"; };
 		D782A5DA1BE966F700E51BAC /* LoginSignupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginSignupPickerViewController.swift; path = ../LoginSignupPickerViewController.swift; sourceTree = "<group>"; };
 		D782A5DC1BE967E500E51BAC /* LoginSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
+		D782A5DE1BE9694200E51BAC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D782A5E01BE9696B00E51BAC /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		D782A5E21BE969B400E51BAC /* Comments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		D782A5E41BE969BD00E51BAC /* Likes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Likes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,10 @@
 				D782A5DA1BE966F700E51BAC /* LoginSignupPickerViewController.swift */,
 				D782A5BB1BE9567F00E51BAC /* AppDelegate.swift */,
 				D782A5BD1BE9567F00E51BAC /* ViewController.swift */,
+				D782A5E01BE9696B00E51BAC /* Post.swift */,
+				D782A5E21BE969B400E51BAC /* Comments.swift */,
+				D782A5E41BE969BD00E51BAC /* Likes.swift */,
+				D782A5DE1BE9694200E51BAC /* User.swift */,
 				D782A5D41BE9654700E51BAC /* ProfileViewController.swift */,
 				D782A5D21BE9644000E51BAC /* UserSearchTableViewController.swift */,
 				D782A5BF1BE9567F00E51BAC /* Main.storyboard */,
@@ -156,14 +168,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D782A5DB1BE966F700E51BAC /* LoginSignupPickerViewController.swift in Sources */,
+				D782A5E11BE9696B00E51BAC /* Post.swift in Sources */,
 				D782A5D51BE9654700E51BAC /* ProfileViewController.swift in Sources */,
 				D782A5D31BE9644000E51BAC /* UserSearchTableViewController.swift in Sources */,
+				D782A5E51BE969BD00E51BAC /* Likes.swift in Sources */,
 				D782A5BE1BE9567F00E51BAC /* ViewController.swift in Sources */,
 				D782A5DD1BE967E500E51BAC /* LoginSignupViewController.swift in Sources */,
 				D782A5CF1BE961E900E51BAC /* TimelineTableViewController.swift in Sources */,
 				D782A5D11BE9627400E51BAC /* PostDetailTableViewController.swift in Sources */,
 				D782A5BC1BE9567F00E51BAC /* AppDelegate.swift in Sources */,
+				D782A5DF1BE9694200E51BAC /* User.swift in Sources */,
 				D782A5D71BE965AF00E51BAC /* AddPhotoTableViewController.swift in Sources */,
+				D782A5E31BE969B400E51BAC /* Comments.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
