@@ -7,17 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 struct Post: Equatable {
     
-    var image: String
+    var image: UIImage
     var caption: String? = nil
     var username: String
     var comments: [String] = []
     var likes: [String] = []
     var identifier: String?
     
-    init(image: String, caption: String = "", username: String, comments: [String] = [], likes: [String] = []){
+    init(image: UIImage, caption: String = "", username: String, comments: [String] = [], likes: [String] = []){
         
         self.image = image
         self.caption = caption

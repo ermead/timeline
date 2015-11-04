@@ -25,6 +25,7 @@
 		D782A5E51BE969BD00E51BAC /* Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782A5E41BE969BD00E51BAC /* Likes.swift */; settings = {ASSET_TAGS = (); }; };
 		D782A5E71BE9843500E51BAC /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782A5E61BE9843500E51BAC /* UserController.swift */; settings = {ASSET_TAGS = (); }; };
 		D782A5E91BE98A0B00E51BAC /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782A5E81BE98A0B00E51BAC /* PostController.swift */; settings = {ASSET_TAGS = (); }; };
+		D782A5EB1BE98DEC00E51BAC /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782A5EA1BE98DEC00E51BAC /* ImageController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		D782A5E41BE969BD00E51BAC /* Likes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Likes.swift; sourceTree = "<group>"; };
 		D782A5E61BE9843500E51BAC /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		D782A5E81BE98A0B00E51BAC /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		D782A5EA1BE98DEC00E51BAC /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				D782A5D41BE9654700E51BAC /* ProfileViewController.swift */,
 				D782A5E61BE9843500E51BAC /* UserController.swift */,
 				D782A5E81BE98A0B00E51BAC /* PostController.swift */,
+				D782A5EA1BE98DEC00E51BAC /* ImageController.swift */,
 				D782A5D21BE9644000E51BAC /* UserSearchTableViewController.swift */,
 				D782A5BF1BE9567F00E51BAC /* Main.storyboard */,
 				D782A5DC1BE967E500E51BAC /* LoginSignupViewController.swift */,
@@ -180,6 +183,7 @@
 				D782A5E71BE9843500E51BAC /* UserController.swift in Sources */,
 				D782A5E91BE98A0B00E51BAC /* PostController.swift in Sources */,
 				D782A5E51BE969BD00E51BAC /* Likes.swift in Sources */,
+				D782A5EB1BE98DEC00E51BAC /* ImageController.swift in Sources */,
 				D782A5BE1BE9567F00E51BAC /* ViewController.swift in Sources */,
 				D782A5DD1BE967E500E51BAC /* LoginSignupViewController.swift in Sources */,
 				D782A5CF1BE961E900E51BAC /* TimelineTableViewController.swift in Sources */,
