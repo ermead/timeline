@@ -11,7 +11,7 @@ import Foundation
 
 class UserController {
     
-    var currentUser: User! = nil
+    var currentUser: User! = User(username: "Jim", bio: "nada", url: "www.com", identifier: "123jhjqhd")
     
     static let sharedController = UserController()
     
@@ -20,7 +20,7 @@ class UserController {
     }
     
     static func fetchAllUsers(completion: (users: [User]) -> Void ) {
-        
+        mockUsers()
     }
     
     static func followUser(user: User, completion: (success: Bool)-> Void) {
