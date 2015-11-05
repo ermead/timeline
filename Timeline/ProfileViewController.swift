@@ -10,24 +10,69 @@ import UIKit
 
 class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, ProfileHeaderCollectionReusableViewDelegate {
     
-    var user: User?
+    var user: User!
     var userPosts: [Post] = []
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    func updateWithUser(user: User){
+        self.user = user
+        self.title = user.username
+        
+        if user != UserController.sharedController.currentUser {
+            
+            // as of writing there is no system way to remove a bar button item
+            // disables and hides the button
+            
+            self.navigationItem.rightBarButtonItem?.enabled = false
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clearColor()
+            
+            self.navigationItem.leftBarButtonItem?.enabled = false
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clearColor()
+        }
+        
+        PostController.postsForUser(user.username) { (posts) -> Void in
+            
+            if let posts = posts {
+                self.userPosts = posts
+                self.collectionView.reloadData()
+            }
+        }
+        
+    }
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionCell", forIndexPath: indexPath)
-        return cell
+        let item = collectionView.dequeueReusableCellWithReuseIdentifier("collectionCell", forIndexPath: indexPath) as! ProfileImageCollectionViewCell
+        
+        let post = userPosts[indexPath.item]
+        
+        item.updateWithImageIdentifier(post.imageEndPoint)
+        
+        return item
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return userPosts.count
     }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        let view = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "profileHeaderView", forIndexPath: indexPath) as! ProfileHeaderCollectionReusableView
+        
+        view.delegate = self
+        
+        view.updateWithUser(user)
+        
+        return view
+    }
+
     
     func userTappedURLButton(sender: UIButton) {
         

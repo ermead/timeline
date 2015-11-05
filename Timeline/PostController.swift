@@ -21,7 +21,7 @@ class PostController {
     static func postFromIdentifier(identifier: String, completion: (post: Post?)-> Void ){
         
     }
-    static func postsForUser(user: User, completion: ([Post]?) -> Void ){
+    static func postsForUser(username: String, completion: ([Post]?) -> Void ){
         
     }
     static func deletePost(post: Post){

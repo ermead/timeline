@@ -12,8 +12,6 @@ class ProfileImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageViewOutlet: UIImageView!
     
-    
-    
     func updateWithImageIdentifier(identifier: String){
         
         self.imageViewOutlet.image = nil

@@ -138,6 +138,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="lzj-mn-gfJ"/>
+                    <connections>
+                        <outlet property="collectionView" destination="56H-Yn-RQ3" id="YGb-8f-qPG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPr-HW-NKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="qv6-rg-AqP"/>

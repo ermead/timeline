@@ -103,6 +103,7 @@
 				D782A5CE1BE961E900E51BAC /* TimelineTableViewController.swift */,
 				D782A5D21BE9644000E51BAC /* UserSearchTableViewController.swift */,
 				D782A5BD1BE9567F00E51BAC /* ViewController.swift */,
+				D7020C001BEBA5CB000D37D8 /* ProfileImageCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -131,7 +132,6 @@
 				D7020BFB1BEB93BB000D37D8 /* Views */,
 				D7020BFA1BEB93B8000D37D8 /* Models */,
 				D782A5BF1BE9567F00E51BAC /* Main.storyboard */,
-				D7020C001BEBA5CB000D37D8 /* ProfileImageCollectionViewCell.swift */,
 				D782A5C21BE9567F00E51BAC /* Assets.xcassets */,
 				D782A5C41BE9567F00E51BAC /* LaunchScreen.storyboard */,
 				D782A5C71BE9567F00E51BAC /* Info.plist */,
