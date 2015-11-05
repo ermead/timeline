@@ -16,6 +16,17 @@ class ProfileHeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var followUserButton: UIButton!
     @IBOutlet weak var urlButton: UIButton!
     
+    @IBAction func followUserButtonTapped(sender: UIButton) {
+        
+        self.delegate?.userTappedFollowActionButton(sender)
+        
+    }
+    
+    @IBAction func urlButtonTapped(sender: UIButton) {
+        
+        self.delegate?.userTappedURLButton(sender)
+    }
+    
     
     func updateWithUser(user: User) {
         
