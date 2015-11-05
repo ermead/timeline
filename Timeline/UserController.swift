@@ -11,7 +11,7 @@ import Foundation
 
 class UserController {
     
-    var currentUser: String? = nil
+    var currentUser: User! = nil
     
     static let sharedController = UserController()
     
@@ -19,7 +19,7 @@ class UserController {
     
     }
     
-    static func fetchAllUsers(completion: [User])->Void {
+    static func fetchAllUsers(completion: (users: [User]) -> Void ) {
         
     }
     
@@ -40,7 +40,7 @@ class UserController {
         
     }
     
-    static func createUser(email: String, username: String, bio: String?, url: String?, completion: (success: Bool, user: User?)-> Void){
+    static func createUser(email: String, username: String, bio: String?, url: String?, password: String?, completion: (success: Bool, user: User?)-> Void){
         
     }
     

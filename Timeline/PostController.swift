@@ -12,7 +12,7 @@ import Foundation
 class PostController {
 
     
-    static func fetchTimelineForUser(user: User, completion: ([Post])-> Void){
+    static func fetchTimelineForUser(user: User, completion: ([Post]?)-> Void){
         
     }
     static func addPost(image: String, caption: String? , completion: (success: Bool, post: Post?) ){
@@ -43,7 +43,7 @@ class PostController {
         return []
     }
     
-    static func mockPosts() -> [Post]{
+    static func mockPosts() -> [Post?]{
     
         let post1 = Post(image: "K1l4125TYvKMc7rcp5e", caption: "Whoa man", username: "jim1", comments: ["nice pic"], likes: ["one"])
         

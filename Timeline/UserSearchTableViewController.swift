@@ -9,7 +9,61 @@
 import UIKit
 
 class UserSearchTableViewController: UITableViewController {
+    
+    var usersDataSource: [User] = []
 
+    @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
+    
+    enum ViewMode: Int {
+        
+        case Friends
+        case All
+        
+        func users(completion: (users:[User]?) -> Void) {
+            
+            switch self {
+                
+            case .Friends:
+               UserController.followedByUser(UserController.sharedController.currentUser, completion: { (followers) -> Void in
+                completion(users: followers)
+               })
+                
+            case .All:
+              UserController.fetchAllUsers({ (users) -> Void in
+                completion(users: users)
+              })
+            }
+        }
+    }
+    
+    var mode:ViewMode {
+
+        return ViewMode(rawValue: modeSegmentedControl.selectedSegmentIndex)!
+    
+    }
+    
+  
+    
+    func updateViewForMode(mode: ViewMode) {
+        
+        mode.users { (users) -> Void in
+            
+            if let users = users {
+                self.usersDataSource = users
+            } else {
+                self.usersDataSource = []
+            }
+            
+            self.tableView.reloadData()
+        }
+    }
+    
+    @IBAction func segmentedControlSwitched(sender: UISegmentedControl) {
+
+        updateViewForMode(mode)
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,25 +81,21 @@ class UserSearchTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.usersDataSource.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCellWithIdentifier("friendsCell", forIndexPath: indexPath)
+        
+        let user = self.usersDataSource[indexPath.row]
+        
+        cell.textLabel?.text = user.username
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -93,3 +143,5 @@ class UserSearchTableViewController: UITableViewController {
     */
 
 }
+
+
