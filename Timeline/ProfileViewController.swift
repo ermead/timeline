@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()

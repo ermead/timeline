@@ -8,9 +8,10 @@
 
 import UIKit
 
-class UserSearchTableViewController: UITableViewController {
+class UserSearchTableViewController: UITableViewController, UISearchResultsUpdating {
     
     var usersDataSource: [User] = []
+    var searchController: UISearchController!
 
     @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
     
@@ -66,6 +67,8 @@ class UserSearchTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUpSearchController()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -96,6 +99,67 @@ class UserSearchTableViewController: UITableViewController {
         return cell
     }
     
+    func setUpSearchController(){
+        
+        let resultsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("userSearchResults")
+        
+        searchController = UISearchController(searchResultsController: resultsController)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.sizeToFit()
+        searchController.hidesNavigationBarDuringPresentation = false
+        tableView.tableHeaderView = searchController.searchBar
+        
+        definesPresentationContext = true
+    
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        let searchTerm = searchController.searchBar.text!.lowercaseString
+        
+        let resultsViewController = searchController.searchResultsController as! UserListSearchResultsTableViewController
+        
+        resultsViewController.usersDataSource = self.usersDataSource.filter({$0.username.lowercaseString.containsString(searchTerm)})
+        resultsViewController.tableView.reloadData()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let sender = sender as! UITableViewCell
+        
+        var selectedUser: User
+        
+        // if we get an indexPath from the search results controller, use that userDataSource
+        // else, use self.userDataSource
+        
+        if let indexPath = (searchController.searchResultsController as? UserListSearchResultsTableViewController)?.tableView.indexPathForCell(sender) {
+            
+            let usersDataSource = (searchController.searchResultsController as! UserListSearchResultsTableViewController).usersDataSource
+            
+            selectedUser = usersDataSource[indexPath.row]
+        } else {
+            
+            let indexPath = tableView.indexPathForCell(sender)!
+            selectedUser = self.usersDataSource[indexPath.row]
+        }
+        
+        let destinationViewController = segue.destinationViewController as! ProfileViewController
+        
+        destinationViewController.user = selectedUser
+        
+        
+    }
+
+    
+    
+//    Add a function setUpSearchController() that will initialize and assign settings to the UISearchController
+//    Implement the function by capturing an instance of the Search Results scene as a resultsController in Main.storyboard using the scene's identifier, initializing the UISearchController with the the resultsController, setting the searchResultsUpdater to self, and setting the search controller's search bar as the header of the tableView
+//    Call the setUpSearchController() function in the viewDidLoad()
+//    Adopt the SearchResultsUpdating protocol and add the required updateSearchResultsForSearchController(searchController: UISearchController) function
+//    Implement the SearchResultsUpdating function by capturing the text in the search bar and assigning the search controller's usersDataSource to a filtered array of User objects where the username contains the search term, then reload the result view's tableView
+//    note: Use self.usersDataSource as the source of the filtered array
+//    note: You may want to convert the search term and usernames to lowercase using .lowercaseString to avoid case sensitive search results
+
 
     /*
     // Override to support conditional editing of the table view.
