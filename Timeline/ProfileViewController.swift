@@ -17,9 +17,29 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if user == nil{
+            
+            user = UserController.sharedController.currentUser
+        }
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        UserController.userForIdentifier(user.identifier) { (user) -> Void in
+            self.updateWithUser(user!)
+        }
+
+    }
+    
+    @IBAction func LogoutButtonTapped(sender: UIBarButtonItem) {
+        
+        UserController.logOutCurrentUser()
+        tabBarController?.selectedViewController = tabBarController?.viewControllers![0]
+    
+    }
+    
     
     func updateWithUser(user: User){
         self.user = user
@@ -87,6 +107,18 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toEditProfile" {
+            
+            if let destinationViewController = segue.destinationViewController as? LoginSignupViewController {
+                
+                _ = destinationViewController.view
+                
+                destinationViewController.updateWithUser(self.user)
+            }
+            
+        }
+    }
 
     /*
     // MARK: - Navigation

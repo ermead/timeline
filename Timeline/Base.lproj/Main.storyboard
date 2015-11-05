@@ -19,11 +19,12 @@
                         <segue destination="hVJ-dJ-5Vj" kind="relationship" relationship="viewControllers" id="oai-sV-4rl"/>
                         <segue destination="oPC-oN-2mx" kind="relationship" relationship="viewControllers" id="VIo-Yc-MYP"/>
                         <segue destination="bTk-VL-mDF" kind="presentation" identifier="toLoginSignup" id="V6e-il-hRe"/>
+                        <segue destination="d0E-NO-Q9v" kind="relationship" relationship="viewControllers" id="8fF-ZB-hEz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXy-5J-FcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-586" y="48"/>
+            <point key="canvasLocation" x="-658" y="138"/>
         </scene>
         <!--User List Search Results Table View Controller-->
         <scene sceneID="bvu-0o-r6P">
@@ -52,6 +53,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNt-lR-dbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1008" y="-2058"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="zQ1-aj-Dr4">
+            <objects>
+                <navigationController id="d0E-NO-Q9v" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="wIP-bw-EK2"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h96-rw-LF0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="q3j-Dj-7Kh" kind="relationship" relationship="rootViewController" id="4PE-uR-lRR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6X6-nI-5Ut" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="217" y="-2058"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="rbF-tN-bnS">
@@ -99,7 +117,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="rF3-Y2-ayT">
                                             <rect key="frame" x="257" y="-16" width="46" height="81"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSE-UN-ZKo">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSE-UN-ZKo">
                                                     <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
@@ -137,7 +155,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lzj-mn-gfJ"/>
+                    <navigationItem key="navigationItem" id="lzj-mn-gfJ">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="bhW-0h-mrh">
+                            <connections>
+                                <action selector="LogoutButtonTapped:" destination="q3j-Dj-7Kh" id="TYx-I7-eld"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="QNs-2h-4YV">
+                            <connections>
+                                <segue destination="CeW-hw-yaq" kind="presentation" identifier="toEditProfile" id="ymX-e9-pWC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="56H-Yn-RQ3" id="YGb-8f-qPG"/>
                     </connections>
@@ -145,7 +174,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPr-HW-NKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="qv6-rg-AqP"/>
             </objects>
-            <point key="canvasLocation" x="999" y="-1324"/>
+            <point key="canvasLocation" x="981" y="-1309"/>
         </scene>
         <!--User Search Table View Controller-->
         <scene sceneID="QXd-sO-U2D">
@@ -193,7 +222,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Aq-Oj-kjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="999" y="-610"/>
+            <point key="canvasLocation" x="969" y="-638"/>
         </scene>
         <!--Timeline Table View Controller-->
         <scene sceneID="5Ek-fH-4vf">
@@ -510,11 +539,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IH8-cL-pGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-592" y="-658"/>
+            <point key="canvasLocation" x="-648" y="-638"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nf6-e7-jbY"/>
-        <segue reference="K2F-EW-JPG"/>
+        <segue reference="ymX-e9-pWC"/>
+        <segue reference="4PE-uR-lRR"/>
     </inferredMetricsTieBreakers>
 </document>
