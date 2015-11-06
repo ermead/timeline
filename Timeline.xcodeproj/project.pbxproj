@@ -13,6 +13,13 @@
 		D7020C271BEC12D2000D37D8 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7020C261BEC12D2000D37D8 /* PostTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D7020C291BEC24FA000D37D8 /* cashonly_mic.png in Resources */ = {isa = PBXBuildFile; fileRef = D7020C281BEC24FA000D37D8 /* cashonly_mic.png */; settings = {ASSET_TAGS = (); }; };
 		D7020C2B1BEC275D000D37D8 /* PostCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7020C2A1BEC275D000D37D8 /* PostCommentTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		D70D07471BED3EB6007C6D44 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70D07461BED3EB6007C6D44 /* CFNetwork.framework */; };
+		D70D07491BED3EBE007C6D44 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70D07481BED3EBE007C6D44 /* Security.framework */; };
+		D70D074B1BED3ECA007C6D44 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70D074A1BED3ECA007C6D44 /* SystemConfiguration.framework */; };
+		D70D074D1BED3EEF007C6D44 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D70D074C1BED3EEF007C6D44 /* libicucore.tbd */; };
+		D70D074F1BED3EFD007C6D44 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D70D074E1BED3EFD007C6D44 /* libc++.tbd */; };
+		D70D07B01BED65C8007C6D44 /* FireBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D07AF1BED65C8007C6D44 /* FireBaseController.swift */; settings = {ASSET_TAGS = (); }; };
+		D70D07B21BED667C007C6D44 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70D07B11BED667C007C6D44 /* Firebase.framework */; };
 		D782A5BC1BE9567F00E51BAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D782A5BB1BE9567F00E51BAC /* AppDelegate.swift */; };
 		D782A5C11BE9567F00E51BAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D782A5BF1BE9567F00E51BAC /* Main.storyboard */; };
 		D782A5C31BE9567F00E51BAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D782A5C21BE9567F00E51BAC /* Assets.xcassets */; };
@@ -40,6 +47,13 @@
 		D7020C261BEC12D2000D37D8 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		D7020C281BEC24FA000D37D8 /* cashonly_mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cashonly_mic.png; sourceTree = "<group>"; };
 		D7020C2A1BEC275D000D37D8 /* PostCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCommentTableViewCell.swift; sourceTree = "<group>"; };
+		D70D07461BED3EB6007C6D44 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D70D07481BED3EBE007C6D44 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D70D074A1BED3ECA007C6D44 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D70D074C1BED3EEF007C6D44 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		D70D074E1BED3EFD007C6D44 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D70D07AF1BED65C8007C6D44 /* FireBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireBaseController.swift; sourceTree = "<group>"; };
+		D70D07B11BED667C007C6D44 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Timeline/Firebase.framework; sourceTree = "<group>"; };
 		D782A5B81BE9567F00E51BAC /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D782A5BB1BE9567F00E51BAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D782A5C01BE9567F00E51BAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +81,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D70D07B21BED667C007C6D44 /* Firebase.framework in Frameworks */,
+				D70D074F1BED3EFD007C6D44 /* libc++.tbd in Frameworks */,
+				D70D074D1BED3EEF007C6D44 /* libicucore.tbd in Frameworks */,
+				D70D074B1BED3ECA007C6D44 /* SystemConfiguration.framework in Frameworks */,
+				D70D07491BED3EBE007C6D44 /* Security.framework in Frameworks */,
+				D70D07471BED3EB6007C6D44 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +133,20 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		D70D07501BED3FE7007C6D44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D70D07B11BED667C007C6D44 /* Firebase.framework */,
+				D70D074E1BED3EFD007C6D44 /* libc++.tbd */,
+				D70D074C1BED3EEF007C6D44 /* libicucore.tbd */,
+				D70D074A1BED3ECA007C6D44 /* SystemConfiguration.framework */,
+				D70D07481BED3EBE007C6D44 /* Security.framework */,
+				D70D07461BED3EB6007C6D44 /* CFNetwork.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		D782A5AF1BE9567F00E51BAC = {
 			isa = PBXGroup;
 			children = (
@@ -133,10 +167,12 @@
 			isa = PBXGroup;
 			children = (
 				D782A5BB1BE9567F00E51BAC /* AppDelegate.swift */,
+				D70D07AF1BED65C8007C6D44 /* FireBaseController.swift */,
 				D7020BF91BEB93B6000D37D8 /* Controllers */,
 				D7020BFB1BEB93BB000D37D8 /* Views */,
 				D7020BFA1BEB93B8000D37D8 /* Models */,
 				D782A5BF1BE9567F00E51BAC /* Main.storyboard */,
+				D70D07501BED3FE7007C6D44 /* Frameworks */,
 				D782A5C21BE9567F00E51BAC /* Assets.xcassets */,
 				D7020C281BEC24FA000D37D8 /* cashonly_mic.png */,
 				D782A5C41BE9567F00E51BAC /* LaunchScreen.storyboard */,
@@ -230,6 +266,7 @@
 				D782A5DD1BE967E500E51BAC /* LoginSignupViewController.swift in Sources */,
 				D782A5CF1BE961E900E51BAC /* TimelineTableViewController.swift in Sources */,
 				D782A5D11BE9627400E51BAC /* PostDetailTableViewController.swift in Sources */,
+				D70D07B01BED65C8007C6D44 /* FireBaseController.swift in Sources */,
 				D782A5BC1BE9567F00E51BAC /* AppDelegate.swift in Sources */,
 				D7020BFF1BEB9CE8000D37D8 /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				D782A5DF1BE9694200E51BAC /* User.swift in Sources */,
@@ -348,6 +385,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Timeline",
+				);
 				INFOPLIST_FILE = Timeline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mysite.Timeline;
@@ -359,6 +400,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Timeline",
+				);
 				INFOPLIST_FILE = Timeline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mysite.Timeline;

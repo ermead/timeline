@@ -9,17 +9,22 @@
 import Foundation
 import UIKit
 
-struct Post: Equatable {
+struct Post: Equatable, FirebaseType {
     
+    private let UserKey = "username"
+    private let ImageEndPointKey = "imageEndpoint"
+    private let CaptionKey = "caption"
+    private let CommentsKey = "comments"
+    private let LikesKey = "likes"
     
     var imageEndPoint: String
-    var caption: String? = nil
+    var caption: String?
     var username: String
-    var comments: [String] = []
-    var likes: [String] = []
+    var comments: [Comment] = []
+    var likes: [Like] = []
     var identifier: String?
     
-    init(imageEndPoint: String, caption: String = "", username: String, comments: [String] = [], likes: [String] = []){
+    init(imageEndPoint: String, caption: String?, username: String = UserController.sharedController.currentUser.username, comments: [Comment] = [], likes: [Like] = [], identifier: String? = nil){
         
         self.imageEndPoint = imageEndPoint
         self.caption = caption
@@ -28,7 +33,58 @@ struct Post: Equatable {
         self.likes = likes
         
     }
+    
+    // MARK: FirebaseType
+    
+    var endpoint: String  = "posts"
+    
+    var jsonValue: [String: AnyObject] {
+        
+        var json: [String: AnyObject] = [UserKey: self.username, ImageEndPointKey: self.imageEndPoint, CommentsKey: self.comments.map({$0.jsonValue}), LikesKey: self.likes.map({$0.jsonValue})]
+        
+        if let caption = self.caption {
+            
+            json.updateValue(caption, forKey: CaptionKey)
+        }
+        
+        return json
+    }
+    
+    init?(json: [String: AnyObject], identifier: String) {
+        
+        guard let username = json[UserKey] as? String,
+            let imageEndPoint = json[ImageEndPointKey] as? String else {
+                
+                self.imageEndPoint = ""
+                self.caption = ""
+                self.username = ""
+                self.identifier = ""
+                
+                return nil
+        }
+        
+        self.imageEndPoint = imageEndPoint
+        self.caption = json[CaptionKey] as? String
+        self.username = username
+        self.identifier = identifier
+        
+        if let commentDictionaries = json[CommentsKey] as? [String: AnyObject] {
+            self.comments = commentDictionaries.flatMap({Comment(json: $0.1 as! [String : AnyObject], identifier: $0.0)})
+        } else {
+            self.comments = []
+        }
+        
+        if let likeDictionaries = json[LikesKey] as? [String: AnyObject] {
+            self.likes = likeDictionaries.flatMap({Like(json: $0.1 as! [String : AnyObject], identifier: $0.0)})
+        } else {
+            self.likes = []
+        }
+    }
+    
+    
 }
+
+
 
 func == (lhs: Post, rhs: Post) -> Bool {
     return (lhs.username == rhs.username) && (lhs.identifier == rhs.identifier)

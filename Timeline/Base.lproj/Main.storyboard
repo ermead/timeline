@@ -83,7 +83,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="56H-Yn-RQ3">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="56H-Yn-RQ3">
                                 <rect key="frame" x="20" y="12" width="560" height="539"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="a2L-Xa-9fc">
@@ -308,7 +308,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="comments" destination="fRU-9d-D7b" id="a9u-lP-pRt"/>
-                                    <outlet property="imageView" destination="jRM-fL-qVE" id="nnz-Ky-v4Q"/>
+                                    <outlet property="imageViewOutlet" destination="jRM-fL-qVE" id="A0E-ZE-D0r"/>
                                     <outlet property="likes" destination="owi-G7-Q5H" id="PAV-d0-h2H"/>
                                     <segue destination="DKb-x2-ckV" kind="show" id="tdE-RT-Q1T"/>
                                 </connections>
@@ -350,7 +350,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Add Button"/>
                             <connections>
-                                <action selector="addButtonTapped:" destination="uLx-b8-2Gb" eventType="touchUpInside" id="fms-2X-eNq"/>
+                                <action selector="addButtonTapped:" destination="uLx-b8-2Gb" eventType="touchUpInside" id="0Lz-PX-8S0"/>
                             </connections>
                         </button>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Sw-ES-O9e">
@@ -368,7 +368,7 @@
                                         <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WW7-Hw-FOi" id="iq5-De-24x">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iOo-yj-JKj">
@@ -497,16 +497,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GIT-Bb-d7n">
-                                            <rect key="frame" x="8" y="0.0" width="592" height="80"/>
+                                            <rect key="frame" x="8" y="0.0" width="584" height="80"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXu-Le-n1R">
-                                                    <rect key="frame" x="0.0" y="0.0" width="592" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="584" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9E9-gA-3ib">
-                                                    <rect key="frame" x="0.0" y="40" width="592" height="40"/>
+                                                    <rect key="frame" x="0.0" y="40" width="584" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -521,6 +521,11 @@
                                         <constraint firstItem="GIT-Bb-d7n" firstAttribute="top" secondItem="tTx-ZA-DwH" secondAttribute="top" id="JvI-8g-NT7"/>
                                         <constraint firstItem="GIT-Bb-d7n" firstAttribute="leading" secondItem="tTx-ZA-DwH" secondAttribute="leadingMargin" id="hmq-hi-Ig5"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="DYg-AV-LTH"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="commentLabel" destination="aXu-Le-n1R" id="9NT-43-iz5"/>
@@ -581,36 +586,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="BlB-3X-ne5">
-                                <rect key="frame" x="20" y="108" width="560" height="237"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="BlB-3X-ne5">
+                                <rect key="frame" x="20" y="108" width="560" height="281"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9dt-o7-qbr">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="47"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uk8-Az-tpg">
-                                        <rect key="frame" x="0.0" y="40" width="560" height="40"/>
+                                        <rect key="frame" x="0.0" y="47" width="560" height="47"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="020-d2-HJP">
-                                        <rect key="frame" x="0.0" y="79" width="560" height="40"/>
+                                        <rect key="frame" x="0.0" y="94" width="560" height="47"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="bio" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OE8-jP-w5m">
-                                        <rect key="frame" x="0.0" y="119" width="560" height="40"/>
+                                        <rect key="frame" x="0.0" y="141" width="560" height="47"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="web url" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XeK-xI-zWC">
-                                        <rect key="frame" x="0.0" y="158" width="560" height="40"/>
+                                        <rect key="frame" x="0.0" y="188" width="560" height="47"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iQ-fw-FjS">
-                                        <rect key="frame" x="0.0" y="198" width="560" height="40"/>
+                                        <rect key="frame" x="0.0" y="234" width="560" height="47"/>
                                         <state key="normal" title="Action"/>
                                         <connections>
                                             <action selector="actionButtonTapped:" destination="CeW-hw-yaq" eventType="touchUpInside" id="GU2-QC-rhv"/>
@@ -778,7 +783,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ymX-e9-pWC"/>
-        <segue reference="1vm-oN-kZ5"/>
-        <segue reference="eJK-CL-923"/>
+        <segue reference="4PE-uR-lRR"/>
+        <segue reference="tdE-RT-Q1T"/>
     </inferredMetricsTieBreakers>
 </document>
