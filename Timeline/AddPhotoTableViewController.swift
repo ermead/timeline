@@ -80,7 +80,7 @@ class AddPhotoTableViewController: UITableViewController, UIImagePickerControlle
         }
         
     }
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         picker.dismissViewControllerAnimated(true, completion: nil)
         image = info[UIImagePickerControllerOriginalImage] as? UIImage
