@@ -49,7 +49,7 @@ class ProfileHeaderCollectionReusableView: UICollectionReusableView {
         }
         
         if user == UserController.sharedController.currentUser {
-            followUserButton.setTitle("You", forState: .Normal)
+            followUserButton.setTitle(user.username, forState: .Normal)
             followUserButton.enabled = false
         } else {
             UserController.userFollowsUser(UserController.sharedController.currentUser, followsUser: user, completion: { (follows) -> Void in

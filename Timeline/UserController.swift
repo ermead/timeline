@@ -11,7 +11,7 @@ import Foundation
 
 class UserController {
     
-    var currentUser: User! = User(username: "Jim", bio: "nada", url: "www.com", identifier: "123jhjqhd")
+    var currentUser: User! = User(username: "Jim", bio: "I am some guy", url: "www.mynameisjim.com", identifier: "123jhjqhd")
     
     static let sharedController = UserController()
     
@@ -20,7 +20,7 @@ class UserController {
     }
     
     static func fetchAllUsers(completion: (users: [User]) -> Void ) {
-        mockUsers()
+        completion(users: mockUsers())
     }
     
     static func followUser(user: User, completion: (success: Bool)-> Void) {
@@ -28,12 +28,16 @@ class UserController {
     }
     
    static func userFollowsUser(user: User, followsUser: User, completion: (follows: Bool) -> Void ) {
+    
         
+        completion(follows: false)
+
         
     }
     
     static func followedByUser(user: User, completion: ([User]?)-> Void) {
         
+        completion(followingMockUsers())
     }
     
     static func authenticateUser(email: String, password: String, completion: (success: Bool, user: User?)->Void) {
@@ -46,6 +50,8 @@ class UserController {
     
     static func updateUser(user: User, username: String, bio: String?, url: String?, completion: (success: Bool, user: User?)-> Void){
         
+        completion(success: true, user: user)
+        
     }
     
     static func logOutCurrentUser(){
@@ -54,12 +60,22 @@ class UserController {
     
     static func mockUsers() -> [User] {
         
-        let jim = User(username: "jim1", bio: "I am a guy", url: "www.jim.com", identifier: "12345")
+        let jim = User(username: "Jim", bio: "I am a guy", url: "www.jim.com", identifier: "12345")
         let mary = User(username: "mary45", bio: "I am a girl", url: "www.mary.com", identifier: "45678")
         let fred = User(username: "freddy44", bio: "I am a person", url: "www.freddymac.com", identifier: "98765")
         
         return [jim, mary, fred]
     }
+    
+    static func followingMockUsers() -> [User] {
+        
+        let jim = User(username: "Jim", bio: "I am a guy", url: "www.jim.com", identifier: "12345")
+        let mary = User(username: "mary45", bio: "I am a girl", url: "www.mary.com", identifier: "45678")
+        let fred = User(username: "freddy44", bio: "I am a person", url: "www.freddymac.com", identifier: "98765")
+        
+        return [mary, fred]
+    }
+
     
     
 }

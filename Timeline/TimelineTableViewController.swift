@@ -81,6 +81,20 @@ class TimelineTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let index = tableView.indexPathForSelectedRow{
+            
+            
+            if let destinationViewController = segue.destinationViewController as? PostDetailTableViewController{
+               
+                _ = destinationViewController.view
+                destinationViewController.updateWithPost(posts[index.row])
+            }
+        }
+    }
+    
+    
+    
 
     /*
     // Override to support conditional editing of the table view.

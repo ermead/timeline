@@ -13,11 +13,14 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     var user: User!
     var userPosts: [Post] = []
 
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.userPosts = PostController.mockPosts()
+        print(userPosts)
      
         
         if user == nil{
@@ -71,11 +74,12 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let item = collectionView.dequeueReusableCellWithReuseIdentifier("collectionCell", forIndexPath: indexPath) as! ProfileImageCollectionViewCell
+        let item = collectionView.dequeueReusableCellWithReuseIdentifier("photoCell", forIndexPath: indexPath) as! ProfileImageCollectionViewCell
         
         let post = userPosts[indexPath.item]
         
         item.updateWithImageIdentifier(post.imageEndPoint)
+       
         
         return item
     }
@@ -93,6 +97,20 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     func userTappedFollowActionButton(sender: UIButton) {
         
     }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        let view = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "profileHeaderView", forIndexPath: indexPath) as! ProfileHeaderCollectionReusableView
+        
+        view.delegate = self
+        
+        view.updateWithUser(user)
+        
+        return view
+    }
+
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
