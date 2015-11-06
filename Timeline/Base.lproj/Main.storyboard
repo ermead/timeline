@@ -478,7 +478,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="ko6-Ug-PZS">
-                        <barButtonItem key="rightBarButtonItem" title="Like" id="Ywh-EK-stO"/>
+                        <barButtonItem key="rightBarButtonItem" title="Like" id="Ywh-EK-stO">
+                            <connections>
+                                <action selector="likeButtonTapped:" destination="DKb-x2-ckV" id="MWd-2m-HyF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="commentsLabel" destination="6iC-NZ-dzJ" id="N4o-XU-b7a"/>

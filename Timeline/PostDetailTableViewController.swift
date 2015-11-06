@@ -17,6 +17,16 @@ class PostDetailTableViewController: UITableViewController {
     
     @IBOutlet weak var commentsLabel: UILabel!
 
+    @IBAction func likeButtonTapped(sender: UIBarButtonItem) {
+        
+        PostController.addLikeToPost(post) { (success, post) -> Void in
+            if let post = post {
+                self.updateWithPost(post)
+            }
+ 
+        }
+    }
+    
     @IBAction func addCommentButtonTapped(sender: UIButton) {
         
         let commentAlert = UIAlertController(title: "Add Comment", message: nil, preferredStyle: .Alert)
@@ -42,11 +52,31 @@ class PostDetailTableViewController: UITableViewController {
         
         presentViewController(commentAlert, animated: true, completion: nil)
         
-        
-        
     }
+    
+    func updateWithPost(post: Post) {
+        
+        self.post = post
+        
+        self.likesLabel.text = "\(post.likes.count) likes"
+        self.commentsLabel.text = "\(post.comments.count) comments"
+        
+        ImageController.imageForIdentifier(post.imageEndPoint) { (image) -> Void in
+            self.imageViewOutlet.image = image
+        }
+        
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let post = post {
+            updateWithPost(post)
+        } else {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

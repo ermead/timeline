@@ -35,7 +35,7 @@ class PostController {
     static func deleteComment(comment: String, completion: (success: Bool, post: Post?)-> Void){
         
     }
-    static func addLikeToPost(like: Like, completion: (success: Bool, post: Post?)){
+    static func addLikeToPost(post: Post, completion: (success: Bool, post: Post?) -> Void){
         
     }
     static func deleteLike(like: Like, completion: (success: Bool, post: Post?) -> Void){
