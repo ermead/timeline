@@ -20,7 +20,9 @@ class PostController {
     }
     static func addPost(image: UIImage, caption: String?, completion: (post: Post?) -> Void) {
         
-        
+        ImageController.imageForIdentifier("get mock image") { (image) -> Void in
+            return image
+        }
         
     }
     static func postFromIdentifier(identifier: String, completion: (post: Post?)-> Void ){
@@ -41,6 +43,8 @@ class PostController {
         
     }
     static func addLikeToPost(post: Post, completion: (success: Bool, post: Post?) -> Void){
+        
+        
         
     }
     static func deleteLike(like: Like, completion: (success: Bool, post: Post?) -> Void){

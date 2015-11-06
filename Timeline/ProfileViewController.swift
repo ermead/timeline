@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         super.viewDidLoad()
         
         //self.userPosts = PostController.mockPosts()
-        print(userPosts)
+        print("the array of user posts in the profile view controller is \(userPosts)")
      
         
         if user == nil{
@@ -74,18 +74,19 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let item = collectionView.dequeueReusableCellWithReuseIdentifier("photoCell", forIndexPath: indexPath) as! ProfileImageCollectionViewCell
+        //let item = collectionView.dequeueReusableCellWithReuseIdentifier("photoCell", forIndexPath: indexPath) as! ProfileImageCollectionViewCell
         
-        let post = userPosts[indexPath.item]
+        //let post = userPosts[indexPath.item]
         
-        item.updateWithImageIdentifier(post.imageEndPoint)
+        //item.updateWithImageIdentifier(post.imageEndPoint)
+        
+        let item = collectionView.dequeueReusableCellWithReuseIdentifier("photoCell", forIndexPath: indexPath) as! ProfileImageCollectionViewCell    
        
-        
         return item
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return userPosts.count
+        return 1
     }
     
 
@@ -128,19 +129,23 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
             }
             
         }
-//        if segue.identifier == "toPostDetail" {
-//            let cell = sender as! UICollectionViewCell
-//            
-//            if let selectedIndex = collectionView.indexPathForCell(cell)?.item {
-//                
-//                if let destinationViewController = segue.destinationViewController as? PostDetailTableViewController {
-//                    
-//                    _ = destinationViewController.view
-//                    
-//                    destinationViewController.updateWithPost(userPosts[selectedIndex])
-//                }
-//            }
-//        }
+        if segue.identifier == "toPostDetail" {
+            let cell = sender as! UICollectionViewCell
+            
+            if let selectedIndex = collectionView.indexPathForCell(cell)?.item {
+                
+                if let destinationViewController = segue.destinationViewController as? PostDetailTableViewController {
+                    
+                    _ = destinationViewController.view
+                    
+                    //destinationViewController.updateWithPost(userPosts[selectedIndex])
+                    
+                    
+                    
+                    destinationViewController.updateWithPost(PostController.mockPosts().first!)
+                }
+            }
+        }
     }
     
     

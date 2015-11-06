@@ -11,7 +11,8 @@ import Foundation
 
 class UserController {
     
-    var currentUser: User! = User(username: "Jim", bio: "I am some guy", url: "www.mynameisjim.com", identifier: "123jhjqhd")
+    var currentUser: User! = UserController.mockUsers().first
+    //User(username: "Jim", bio: "I am some guy", url: "www.mynameisjim.com", identifier: "123jhjqhd")
     
     static let sharedController = UserController()
     

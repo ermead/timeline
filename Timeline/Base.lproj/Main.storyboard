@@ -86,39 +86,37 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="56H-Yn-RQ3">
                                 <rect key="frame" x="20" y="12" width="560" height="539"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a2L-Xa-9fc">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="a2L-Xa-9fc">
                                     <size key="itemSize" width="439" height="334"/>
                                     <size key="headerReferenceSize" width="50" height="96"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="gxN-pF-2wT" customClass="ProfileImageCollectionViewCell" customModule="Timeline" customModuleProvider="target">
-                                        <rect key="frame" x="60.5" y="160" width="439" height="334"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="aQP-qs-blT" customClass="ProfileImageCollectionViewCell" customModule="Timeline" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="160" width="208" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="439" height="334"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="208" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IMG_3484" translatesAutoresizingMaskIntoConstraints="NO" id="zqh-Tu-g4K">
-                                                    <rect key="frame" x="0.0" y="18" width="431" height="298"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="431" id="BbJ-bR-UcB"/>
-                                                    </constraints>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cashonly_mic.png" translatesAutoresizingMaskIntoConstraints="NO" id="fDT-jo-Fnr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="208" height="150"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.61960784310000006" green="0.0" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="zqh-Tu-g4K" secondAttribute="bottom" constant="7" id="JzY-vx-2m5"/>
-                                            <constraint firstItem="zqh-Tu-g4K" firstAttribute="top" secondItem="gxN-pF-2wT" secondAttribute="topMargin" constant="13" id="bor-p1-ISF"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="zqh-Tu-g4K" secondAttribute="trailing" id="d9h-3p-N3b"/>
+                                            <constraint firstItem="fDT-jo-Fnr" firstAttribute="trailing" secondItem="aQP-qs-blT" secondAttribute="trailingMargin" constant="8" id="PJm-Eq-AJK"/>
+                                            <constraint firstItem="fDT-jo-Fnr" firstAttribute="leading" secondItem="aQP-qs-blT" secondAttribute="leadingMargin" constant="-8" id="ieS-xX-4Zf"/>
+                                            <constraint firstItem="fDT-jo-Fnr" firstAttribute="bottom" secondItem="aQP-qs-blT" secondAttribute="bottomMargin" constant="8" id="oRF-m6-2yh"/>
+                                            <constraint firstItem="fDT-jo-Fnr" firstAttribute="top" secondItem="aQP-qs-blT" secondAttribute="topMargin" constant="-8" id="y63-6a-wcT"/>
                                         </constraints>
+                                        <size key="customSize" width="208" height="150"/>
                                         <connections>
-                                            <outlet property="backgroundView" destination="56H-Yn-RQ3" id="n6Z-ug-CJl"/>
-                                            <outlet property="imageViewOutlet" destination="zqh-Tu-g4K" id="VZt-kJ-dF0"/>
-                                            <segue destination="DKb-x2-ckV" kind="show" id="a6C-ci-NSF"/>
+                                            <outlet property="imageViewOutlet" destination="fDT-jo-Fnr" id="9Io-NQ-xa3"/>
+                                            <segue destination="DKb-x2-ckV" kind="show" identifier="toPostDetail" id="eJK-CL-923"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -347,20 +345,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6SS-Sk-9AV">
-                            <rect key="frame" x="0.0" y="180" width="600" height="207"/>
+                        <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1pn-UH-Peu">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="63"/>
-                            <state key="normal" title="Add Photo"/>
+                            <state key="normal" title="Add Button"/>
                             <connections>
-                                <action selector="addButtonTapped:" destination="uLx-b8-2Gb" eventType="touchUpInside" id="ZGb-QM-YgI"/>
+                                <action selector="addButtonTapped:" destination="uLx-b8-2Gb" eventType="touchUpInside" id="fms-2X-eNq"/>
+                            </connections>
+                        </button>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Sw-ES-O9e">
+                            <rect key="frame" x="0.0" y="180" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="submit"/>
+                            <connections>
+                                <action selector="submitButtonTapped:" destination="uLx-b8-2Gb" eventType="touchUpInside" id="wrC-Rm-UXv"/>
                             </connections>
                         </button>
                         <sections>
                             <tableViewSection headerTitle="Add a caption..." id="4cb-qH-mq0">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addPhotoCell" id="WW7-Hw-FOi">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WW7-Hw-FOi" id="iq5-De-24x">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -384,32 +389,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="EUb-id-a2Q">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gfF-0z-046">
-                                        <rect key="frame" x="0.0" y="136" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gfF-0z-046" id="gBp-4L-gZ3">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rC2-gh-0lN">
-                                                    <rect key="frame" x="8" y="8" width="592" height="30"/>
-                                                    <state key="normal" title="Submit"/>
-                                                    <connections>
-                                                        <action selector="submitButtonTapped:" destination="uLx-b8-2Gb" eventType="touchUpInside" id="5kc-y1-3rm"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="rC2-gh-0lN" firstAttribute="top" secondItem="gBp-4L-gZ3" secondAttribute="topMargin" id="8wJ-eG-AHr"/>
-                                                <constraint firstItem="rC2-gh-0lN" firstAttribute="leading" secondItem="gBp-4L-gZ3" secondAttribute="leadingMargin" id="Db3-kx-ZzO"/>
-                                                <constraint firstAttribute="trailing" secondItem="rC2-gh-0lN" secondAttribute="trailing" id="L8b-Ic-9LG"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="uLx-b8-2Gb" id="qgj-dC-lCe"/>
@@ -424,7 +403,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addPhotoOutlet" destination="6SS-Sk-9AV" id="0m4-06-IkH"/>
+                        <outlet property="addPhotoOutlet" destination="1pn-UH-Peu" id="yHm-i4-5nU"/>
                         <outlet property="textField" destination="iOo-yj-JKj" id="Rf0-LF-FNp"/>
                     </connections>
                 </tableViewController>
@@ -432,10 +411,10 @@
             </objects>
             <point key="canvasLocation" x="1732" y="-1371"/>
         </scene>
-        <!--Title-->
+        <!--Post Detail-->
         <scene sceneID="Bqg-qC-swd">
             <objects>
-                <tableViewController id="DKb-x2-ckV" customClass="PostDetailTableViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Post Detail" id="DKb-x2-ckV" customClass="PostDetailTableViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="1pF-3F-xux">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -795,11 +774,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="IMG_3484" width="5184" height="3456"/>
+        <image name="cashonly_mic.png" width="700" height="700"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ymX-e9-pWC"/>
         <segue reference="1vm-oN-kZ5"/>
-        <segue reference="tdE-RT-Q1T"/>
+        <segue reference="eJK-CL-923"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -19,6 +19,8 @@ class PostDetailTableViewController: UITableViewController {
 
     @IBAction func likeButtonTapped(sender: UIBarButtonItem) {
         
+        print("like button tapped")
+        
         PostController.addLikeToPost(post) { (success, post) -> Void in
             if let post = post {
                 self.updateWithPost(post)
@@ -71,6 +73,7 @@ class PostDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Post detail view loaded")
         if let post = post {
             updateWithPost(post)
         } else {
