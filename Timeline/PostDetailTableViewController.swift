@@ -9,7 +9,42 @@
 import UIKit
 
 class PostDetailTableViewController: UITableViewController {
+    
+    var post: Post!
+    
+    @IBOutlet weak var likesLabel: UILabel!
+    @IBOutlet weak var imageViewOutlet: UIImageView!
+    
+    @IBOutlet weak var commentsLabel: UILabel!
 
+    @IBAction func addCommentButtonTapped(sender: UIButton) {
+        
+        let commentAlert = UIAlertController(title: "Add Comment", message: nil, preferredStyle: .Alert)
+        
+        commentAlert.addTextFieldWithConfigurationHandler { (textfield) -> Void in
+            textfield.placeholder = "Comment"
+        }
+        
+        commentAlert.addAction(UIAlertAction(title: "Add Comment", style: .Default, handler: { (action) -> Void in
+            
+            if let text = commentAlert.textFields?.first?.text {
+                
+                PostController.addCommentWithTextToPost(text, post: self.post, completion: { (success, post) -> Void  in
+                    
+                    if let post = post {
+                        self.updateWithPost(post)
+                    }
+                })
+            }
+        }))
+        
+        commentAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
+        
+        presentViewController(commentAlert, animated: true, completion: nil)
+        
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

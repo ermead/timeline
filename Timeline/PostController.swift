@@ -23,6 +23,8 @@ class PostController {
     }
     static func postsForUser(username: String, completion: ([Post]?) -> Void ){
         
+        mockPosts()
+        
     }
     static func deletePost(post: Post){
         
@@ -45,11 +47,11 @@ class PostController {
     
     static func mockPosts() -> [Post?]{
     
-        let post1 = Post(imageEndPoint: "", image: "K1l4125TYvKMc7rcp5e", caption: "Whoa man", username: "jim1", comments: ["nice pic"], likes: ["one"])
+        let post1 = Post(imageEndPoint: "IMG_3484", image: "K1l4125TYvKMc7rcp5e", caption: "Whoa man", username: "jim1", comments: ["nice pic"], likes: ["one"])
         
-        let post2 = Post(imageEndPoint: "", image: "K1l4125TYvKMc7rcp5f", caption: "Wow man", username: "mary4", comments: ["nice"], likes: ["two"])
+        let post2 = Post(imageEndPoint: "IMG_3484", image: "K1l4125TYvKMc7rcp5f", caption: "Wow man", username: "mary4", comments: ["nice"], likes: ["two"])
         
-        let post3 = Post(imageEndPoint: "", image: "K1l4125TYvKMc7rcp5g", caption: "Nice man", username: "freddymac", comments: ["cool pic"], likes: ["three"])
+        let post3 = Post(imageEndPoint: "IMG_3484", image: "K1l4125TYvKMc7rcp5g", caption: "Nice man", username: "freddymac", comments: ["cool pic"], likes: ["three"])
         
         return [post1, post2, post3]
     }
