@@ -110,7 +110,22 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
             }
             
         }
+//        if segue.identifier == "toPostDetail" {
+//            let cell = sender as! UICollectionViewCell
+//            
+//            if let selectedIndex = collectionView.indexPathForCell(cell)?.item {
+//                
+//                if let destinationViewController = segue.destinationViewController as? PostDetailTableViewController {
+//                    
+//                    _ = destinationViewController.view
+//                    
+//                    destinationViewController.updateWithPost(userPosts[selectedIndex])
+//                }
+//            }
+//        }
     }
+    
+    
 
     /*
     // MARK: - Navigation
